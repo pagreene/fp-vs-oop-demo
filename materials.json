@@ -1,0 +1,104 @@
+[
+  {
+    "name": "flour",
+    "unit": "cup",
+    "mass_per_unit": {
+      "value": 500.0,
+      "unit": "g / l"
+    },
+    "volume_per_unit": null
+  },
+  {
+    "name": "baking flour",
+    "unit": "cup",
+    "mass_per_unit": {
+      "value": 500.0,
+      "unit": "g / l"
+    },
+    "volume_per_unit": null
+  },
+  {
+    "name": "egg",
+    "unit": "ct",
+    "mass_per_unit": {
+      "value": 54.0,
+      "unit": "g / ct"
+    },
+    "volume_per_unit": {
+      "value": 3.0,
+      "unit": "tbsp / ct"
+    }
+  },
+  {
+    "name": "baking soda",
+    "unit": "tsp",
+    "mass_per_unit": null,
+    "volume_per_unit": null
+  },
+  {
+    "name": "baking powder",
+    "unit": "tsp",
+    "mass_per_unit": null,
+    "volume_per_unit": null
+  },
+  {
+    "name": "sugar",
+    "unit": "cup",
+    "mass_per_unit": {
+      "value": 2.0,
+      "unit": "g / ml"
+    },
+    "volume_per_unit": null
+  },
+  {
+    "name": "salt",
+    "unit": "tsp",
+    "mass_per_unit": {
+      "value": 1.2,
+      "unit": "g / ml"
+    },
+    "volume_per_unit": null
+  },
+  {
+    "name": "water",
+    "unit": "cup",
+    "mass_per_unit": {
+      "value": 1.0,
+      "unit": "g / ml"
+    },
+    "volume_per_unit": null
+  },
+  {
+    "name": "milk",
+    "unit": "cup",
+    "mass_per_unit": {
+      "value": 1.0,
+      "unit": "g / ml"
+    },
+    "volume_per_unit": null
+  },
+  {
+    "name": "vanilla",
+    "unit": "tsp",
+    "mass_per_unit": null,
+    "volume_per_unit": null
+  },
+  {
+    "name": "butter",
+    "unit": "tbsp",
+    "mass_per_unit": {
+      "value": 911.0,
+      "unit": "g / ml"
+    },
+    "volume_per_unit": null
+  },
+  {
+    "name": "olive oil",
+    "unit": "cup",
+    "mass_per_unit": {
+      "value": 0.917,
+      "unit": "g / ml"
+    },
+    "volume_per_unit": null
+  }
+]

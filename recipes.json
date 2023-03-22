@@ -1,0 +1,174 @@
+[
+  {
+    "name": "Pancakes",
+    "source": "https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/",
+    "instructions": [
+      "Sift flour, baking powder, sugar, and salt together in a large bowl. Make a well in the center and add milk, melted butter, and egg; mix until smooth.",
+      "Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter."
+    ],
+    "ingredients": [
+      {
+        "quantity": {
+          "value": 1.5,
+          "unit": "cup"
+        },
+        "item": "flour"
+      },
+      {
+        "quantity": {
+          "value": 3.5,
+          "unit": "tsp"
+        },
+        "item": "baking powder"
+      },
+      {
+        "quantity": {
+          "value": 1.0,
+          "unit": "tbsp"
+        },
+        "item": "sugar"
+      },
+      {
+        "quantity": {
+          "value": 0.25,
+          "unit": "tsp"
+        },
+        "item": "salt"
+      },
+      {
+        "quantity": {
+          "value": 1.25,
+          "unit": "cup"
+        },
+        "item": "milk"
+      },
+      {
+        "quantity": {
+          "value": 3.0,
+          "unit": "tbsp"
+        },
+        "item": "butter"
+      },
+      {
+        "quantity": {
+          "value": 1.0,
+          "unit": "ct"
+        },
+        "item": "egg"
+      }
+    ]
+  },
+  {
+    "name": "Pizza dough",
+    "source": "The kitchen of Patrick Greene",
+    "instructions": [
+      "The night before you want to make Pizza, mix the ingredients thoroughly. It helps to begin with the sourdough start, olive oil, salt, and 50-100g of baking flour. This creates an even consistency with the rest of the dough when the rest of the flour and water are added, which prevents clumping. Leave the dough out, lightly covered to allow the yeast to breath, overnight.",
+      "The next morning, do 6 stretch-and-folds, then place the lightly covered bowl in the fridge. Take the bowl out an hour or two before you want to use it, to let it come up to room temperature.",
+      "Preheat the oven and your pan to the maximum temperature (for example 550 Fahrenheit). If you have the option, set your oven to convection bake. The goal is to make the effective temperature in your oven as hot as possible. Split the dough in half, and roll out each half into the shaped pizza crust you want on a floured surface. Freshly oil your pan, and place your dough on it. Decorate the dough, then place the pizza in the oven for 5-10 minutes (depending on your oven temperature). Take the pizza out when the crust is golden-brown (or to taste)."
+    ],
+    "ingredients": [
+      {
+        "quantity": {
+          "value": 110.0,
+          "unit": "g"
+        },
+        "item": "sourdough starter"
+      },
+      {
+        "quantity": {
+          "value": 30.0,
+          "unit": "g"
+        },
+        "item": "olive oil"
+      },
+      {
+        "quantity": {
+          "value": 8.0,
+          "unit": "g"
+        },
+        "item": "salt"
+      },
+      {
+        "quantity": {
+          "value": 300.0,
+          "unit": "g"
+        },
+        "item": "baking flour"
+      },
+      {
+        "quantity": {
+          "value": 250.0,
+          "unit": "g"
+        },
+        "item": "flour"
+      },
+      {
+        "quantity": {
+          "value": 350.0,
+          "unit": "g"
+        },
+        "item": "water"
+      }
+    ]
+  },
+  {
+    "name": "Vanilla mug cake",
+    "source": "https://tastesbetterfromscratch.com/vanilla-mug-cake/#recipe",
+    "instructions": [
+      "Add flour, sugar, baking powder, and salt to a mug and stir together.",
+      "Stir in milk, melted butter, and vanilla extract until smooth, being sure to scrape the bottom of the mug. Stir in sprinkles.",
+      "Cook in microwave for 70-90 seconds* (until cake is just set, but still barely shiny on top). Allow to rest in microwave for 1 minute before consuming."
+    ],
+    "ingredients": [
+      {
+        "quantity": {
+          "value": 0.28125,
+          "unit": "cup"
+        },
+        "item": "flour"
+      },
+      {
+        "quantity": {
+          "value": 2.0,
+          "unit": "tbsp"
+        },
+        "item": "sugar"
+      },
+      {
+        "quantity": {
+          "value": 0.25,
+          "unit": "tsp"
+        },
+        "item": "baking powder"
+      },
+      {
+        "quantity": {
+          "value": 0.25,
+          "unit": "tsp"
+        },
+        "item": "salt"
+      },
+      {
+        "quantity": {
+          "value": 2.0,
+          "unit": "tbsp"
+        },
+        "item": "butter"
+      },
+      {
+        "quantity": {
+          "value": 3.0,
+          "unit": "tbsp"
+        },
+        "item": "milk"
+      },
+      {
+        "quantity": {
+          "value": 0.5,
+          "unit": "tsp"
+        },
+        "item": "vanilla"
+      }
+    ]
+  }
+]
