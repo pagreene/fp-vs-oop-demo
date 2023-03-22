@@ -51,3 +51,33 @@ and more intuitive to understand, its mutability
 and the freedom of interactions between parts of
 the code can make global behavior much harder to
 predict.
+
+## Which is better?
+
+Ultimately, that is subjective, and I would argue it 
+is also situational. However, I think for most case,
+the answer is neither. I think trying to adhere purely
+to one mode or the other is both futile and in most
+cases leads to unwanted complexity.
+
+It is notable that functional programs still require
+classes, if only data classes, at some level. But even then,
+there are at least usually a few primitive types that
+have methods in a functional environment. And even if
+they pretend otherwise with "static methods", OOP
+needs simple functions.
+
+I think that a good rule of thumb is that programs should
+be functions at the surface, and that side-effects and 
+mutability must be carefully considered and limited. However
+it is valuable to have your data models define some 
+select methods that are especially pertinent to
+themselves. This keeps code close to the data it
+manipulates.
+
+In some cases, where extreme, provable reliability is
+essential, or when the focus really is on the process applied
+to the data, functional programming is probably the way to go.
+On the other hand, when complex interactions between
+stateful entities are the focus of your work, your code
+will benefit from an object-oriented lens.
