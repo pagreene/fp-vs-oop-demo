@@ -82,7 +82,7 @@ class Recipe:
         self.instructions = instructions
 
 
-class ShoppingCart:
+class RecipePlanner:
     def __init__(
             self,
             recipes: List[Recipe],
@@ -93,7 +93,7 @@ class ShoppingCart:
         self._shopping_cart = {}
 
     @classmethod
-    def from_files(cls, recipes_file: str, materials_file: str) -> "ShoppingCart":
+    def from_files(cls, recipes_file: str, materials_file: str) -> "RecipePlanner":
         material_definitions = MaterialDefinitions.from_file(materials_file)
 
         recipe_data_list = load_list(recipes_file, RecipeData.parse_obj)
@@ -126,12 +126,11 @@ class ShoppingCart:
                     self._shopping_cart[ingredient.material.name].quantity += ingredient.quantity
         return list(self._shopping_cart.values())
 
-
-def main():
-    shopping_cart = ShoppingCart.from_files("recipes.json", "materials.json")
-    for grocery_item in shopping_cart.get_shopping_list():
-        print(f"- {grocery_item.quantity:.2} {grocery_item.material.name}")
+    def print_grocery_list(self):
+        for grocery_item in self.get_shopping_list():
+            print(f"- {grocery_item.quantity:.2} {grocery_item.material.name}")
 
 
 if __name__ == "__main__":
-    main()
+    RecipePlanner.from_files("recipes.json", "materials.json").print_grocery_list()
+
