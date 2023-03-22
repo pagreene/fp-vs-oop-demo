@@ -4,7 +4,7 @@ from typing import List, Dict, Iterable
 
 from astropy import units as u
 
-from data_models import Material, Ingredient, Recipe
+from data_models import MaterialData, IngredientData, RecipeData
 from pydantic_finagling import (
     mass_type,
     volume_type,
@@ -15,8 +15,8 @@ u.imperial.enable()
 
 
 def regularize_ingredient(
-    ingredient: Ingredient, known_materials: Dict[str, Material]
-) -> Ingredient:
+    ingredient: IngredientData, known_materials: Dict[str, MaterialData]
+) -> IngredientData:
     """Adjust the quantity of an ingredient to match the preferred units of known materials."""
     # Get the matching material
     material = known_materials.get(ingredient.item)
@@ -35,15 +35,15 @@ def regularize_ingredient(
             raise ValueError(
                 f"Cannot regularize {ingredient.item} with {ingredient.quantity}. Preferred unit is {material.unit}"
             )
-        return Ingredient(quantity=quantity.to(material.unit), item=ingredient.item)
+        return IngredientData(quantity=quantity.to(material.unit), item=ingredient.item)
 
     # There was no match, so nothing to do. These items will be much less likely to merge.
     return ingredient
 
 
-def regularize_recipe(recipe: Recipe, known_materials: Dict[str, Material]) -> Recipe:
+def regularize_recipe(recipe: RecipeData, known_materials: Dict[str, MaterialData]) -> RecipeData:
     """Adjust the ingredients for the given recipe."""
-    return Recipe(
+    return RecipeData(
         name=recipe.name,
         source=recipe.source,
         instructions=recipe.instructions,
@@ -55,15 +55,15 @@ def regularize_recipe(recipe: Recipe, known_materials: Dict[str, Material]) -> R
 
 
 def add_recipe_to_ingredients(
-    ingredients: Iterable[Ingredient], recipe: Recipe
-) -> Iterable[Ingredient]:
+    ingredients: Iterable[IngredientData], recipe: RecipeData
+) -> Iterable[IngredientData]:
     """Add the ingredients in a recipe to the overall list of ingredients."""
     return reduce(
         # Compare each ingredient with the end of the list. If it is the same item, merge them.
         # Otherwise, just add them to the list separately.
         lambda merged_ingredients, ingredient: merged_ingredients[:-1]
         + [
-            Ingredient(
+            IngredientData(
                 item=ingredient.item,
                 quantity=ingredient.quantity + merged_ingredients[-1].quantity,
             )
@@ -87,8 +87,8 @@ def add_recipe_to_ingredients(
 
 
 def create_grocery_list(
-    recipes: Iterable[Recipe], material_definitions: List[Material]
-) -> Iterable[Ingredient]:
+    recipes: Iterable[RecipeData], material_definitions: List[MaterialData]
+) -> Iterable[IngredientData]:
     """Generate a grocery list for the given list of recipes."""
     # Turn the list of materials into a lookup table for efficient use.
     material_lookup = {material.name: material for material in material_definitions}
@@ -108,10 +108,10 @@ def create_grocery_list(
 
 def main():
     # Load a list of known materials from JSON
-    material_definitions = load_list("materials.json", Material.parse_obj)
+    material_definitions = load_list("materials.json", MaterialData.parse_obj)
 
     # Load the recipes from JSON
-    recipes = load_list("recipes.json", Recipe.parse_obj)
+    recipes = load_list("recipes.json", RecipeData.parse_obj)
 
     # Create and print a grocery list for the given recipes.
     for grocery_item in create_grocery_list(recipes, material_definitions):

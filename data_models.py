@@ -8,7 +8,7 @@ from pydantic_finagling import UnitfulBaseModel, density_type, mass_type, specif
     validate_unit, validate_quantity
 
 
-class Material(UnitfulBaseModel):
+class MaterialData(UnitfulBaseModel):
     """A known material with physical properties.
 
     The unit indicates the preferred unit representation for this material, and the
@@ -31,7 +31,7 @@ class Material(UnitfulBaseModel):
     )
 
 
-class Ingredient(UnitfulBaseModel):
+class IngredientData(UnitfulBaseModel):
     """An item with a quantity and a name.
 
     The item names will be compared with the list of known materials. Although it is not
@@ -46,9 +46,9 @@ class Ingredient(UnitfulBaseModel):
     )
 
 
-class Recipe(UnitfulBaseModel):
+class RecipeData(UnitfulBaseModel):
     """A recipe with name, source, instructions, and ingredients."""
     name: str
     source: str
-    ingredients: List[Ingredient]
+    ingredients: List[IngredientData]
     instructions: List[str]
