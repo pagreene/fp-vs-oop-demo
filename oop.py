@@ -5,7 +5,13 @@ from data_models import MaterialData, IngredientData, load_list, RecipeData
 
 
 class Material:
-    def __init__(self, name: str, unit: u.UnitBase, mass_per_unit: u.Quantity = None, volume_per_unit: u.Quantity=None):
+    def __init__(
+            self,
+            name: str,
+            unit: u.UnitBase,
+            mass_per_unit: u.Quantity = None,
+            volume_per_unit: u.Quantity = None
+    ):
         self.name = name
         self.unit = unit
         self._mass_per_unit = mass_per_unit
@@ -63,7 +69,13 @@ class Ingredient:
 
 
 class Recipe:
-    def __init__(self, name: str, source: str, ingredients: List[Ingredient], instructions: List[str]):
+    def __init__(
+            self,
+            name: str,
+            source: str,
+            ingredients: List[Ingredient],
+            instructions: List[str]
+    ):
         self.name = name
         self.source = source
         self.ingredients = ingredients
@@ -71,13 +83,17 @@ class Recipe:
 
 
 class ShoppingCart:
-    def __init__(self, recipes: List[Recipe], material_definitions: MaterialDefinitions):
+    def __init__(
+            self,
+            recipes: List[Recipe],
+            material_definitions: MaterialDefinitions
+    ):
         self.recipes = recipes
         self._material_definitions = material_definitions
         self._shopping_cart = {}
 
     @classmethod
-    def from_files(cls, recipes_file, materials_file):
+    def from_files(cls, recipes_file: str, materials_file: str) -> "ShoppingCart":
         material_definitions = MaterialDefinitions.from_file(materials_file)
 
         recipe_data_list = load_list(recipes_file, RecipeData.parse_obj)
