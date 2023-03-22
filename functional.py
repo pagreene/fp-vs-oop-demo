@@ -4,14 +4,7 @@ from typing import List, Dict, Iterable
 
 from astropy import units as u
 
-from data_models import MaterialData, IngredientData, RecipeData
-from pydantic_finagling import (
-    mass_type,
-    volume_type,
-    load_list,
-)
-
-u.imperial.enable()
+from data_models import MaterialData, IngredientData, RecipeData, load_list
 
 
 def regularize_ingredient(
@@ -27,9 +20,9 @@ def regularize_ingredient(
     if material:
         if ingredient.quantity.unit.physical_type == material.unit.physical_type:
             quantity = ingredient.quantity
-        elif ingredient.quantity.unit.physical_type == mass_type:
+        elif ingredient.quantity.unit.physical_type == u.get_physical_type("mass"):
             quantity = ingredient.quantity / material.mass_per_unit
-        elif ingredient.quantity.unit.physical_type == volume_type:
+        elif ingredient.quantity.unit.physical_type == u.get_physical_type("volume"):
             quantity = ingredient.quantity / material.volume_per_unit
         else:
             raise ValueError(

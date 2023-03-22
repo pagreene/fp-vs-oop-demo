@@ -1,3 +1,4 @@
+import json
 from typing import List
 
 from astropy import units as u
@@ -6,6 +7,9 @@ from pydantic import validator
 
 from pydantic_finagling import UnitfulBaseModel, density_type, mass_type, specific_volume_type, volume_type, \
     validate_unit, validate_quantity
+
+
+u.imperial.enable()
 
 
 class MaterialData(UnitfulBaseModel):
@@ -52,3 +56,8 @@ class RecipeData(UnitfulBaseModel):
     source: str
     ingredients: List[IngredientData]
     instructions: List[str]
+
+
+def load_list(file_name, parse_method):
+    with open(file_name) as f:
+        return [parse_method(element) for element in json.load(f)]

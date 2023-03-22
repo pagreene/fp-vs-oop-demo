@@ -1,4 +1,3 @@
-import json
 from typing import Dict
 
 from astropy.units import get_physical_type, UnitBase, Unit, Quantity
@@ -42,6 +41,7 @@ def validate_quantity(quantity: Quantity | Dict) -> Quantity:
 
 class UnitfulBaseModel(BaseModel):
     class Config:
+        allow_mutation = False
         arbitrary_types_allowed = True
         json_encoders = {
             UnitBase: lambda unit: unit.to_string(),
@@ -50,8 +50,3 @@ class UnitfulBaseModel(BaseModel):
                 "unit": quant.unit.to_string(),
             },
         }
-
-
-def load_list(file_name, parse_method):
-    with open(file_name) as f:
-        return [parse_method(element) for element in json.load(f)]
